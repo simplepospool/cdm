@@ -15,14 +15,14 @@ RPC_PORT=33589
 
 NODEIP=$(curl -s4 icanhazip.com)
 
-BLUE="\033[0;34m"
-YELLOW="\033[0;33m"
-CYAN="\033[0;36m" 
-PURPLE="\033[0;35m"
-RED='\033[0;31m'
-GREEN="\033[0;32m"
-NC='\033[0m'
-MAG='\e[1;35m'
+BLUE=""
+YELLOW=""
+CYAN="" 
+PURPLE=""
+RED=''
+GREEN=""
+NC=''
+MAG=''
 
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
