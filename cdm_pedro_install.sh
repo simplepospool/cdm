@@ -51,7 +51,7 @@ function install_sentinel() {
 }
 
 function download_node() {
-  echo -t 10 -e "${GREEN}Downloading and Installing VPS $COIN_NAME Daemon${NC}"
+  echo -e "${GREEN}Downloading and Installing VPS $COIN_NAME Daemon${NC}"
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
@@ -124,14 +124,12 @@ port=$COIN_PORT
 listen=1
 server=1
 daemon=1
-addnode=95.179.147.218
-addnode=149.28.54.85
 EOF
 }
 
 function create_key() {
   echo -e "${YELLOW}Enter your ${RED}$COIN_NAME Masternode GEN Key${NC}. Or Press enter generate New Genkey"
-  read -e COINKEY
+  read -t 10 -e COINKEY
   if [[ -z "$COINKEY" ]]; then
   $COIN_PATH$COIN_DAEMON -daemon
   sleep 30
@@ -161,7 +159,8 @@ masternodeaddr=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 #ADDNODES
-
+addnode=95.179.147.218
+addnode=149.28.54.85
 EOF
 }
 
